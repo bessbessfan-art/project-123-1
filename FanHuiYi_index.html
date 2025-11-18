@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan HuiYi · 外商空服員落地之後 | Cabin Crew Portfolio</title>
+  <meta name="description" content="歡迎來到Fan HuiYi的個人品牌網站，這裡展示我的落地之後嘗試學習前端開發技能、UX/UI等技能，以及如何與我聯絡合作的相關資訊。">
+  
+  <style>
+    /* CSS:BASE-START */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "微軟正黑體", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #000000;
+      background-color: #EFECE3;
+    }
+    
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #4A70A9;
+      text-align: center;
+    }
+    /* CSS:BASE-END */
+    
+    /* CSS:NAV-START */
+    .site-header {
+      background-color: #EFECE3;
+      border-bottom: 2px solid #8FABD4;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .site-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #4A70A9;
+      text-decoration: none;
+      /*自己寫*/
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+   
+    /*自己寫*/
+     .home-icon{
+      width: 30px;
+      height:auto;
+      }
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    
+    .nav-link {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      color: #000000;
+      background-color: #EFECE3;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500px;
+      border: none;
+    }
+    
+    .nav-link:hover {
+      color: #000000;
+      background-color: #8FABD4;
+    }
+    /* CSS:NAV-END */
+    
+    /* CSS:HERO-START */
+    .section-hero {
+      background: linear-gradient(135deg, #4A70A9 0%, #8FABD4 100%);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #EFECE3;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #EFECE3;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-description {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #EFECE3;
+    }
+    
+    .hero-note {
+      font-size: 0.9rem;
+      color: #EFECE3;
+      font-style: italic;
+      margin-top: 2rem;
+      opacity: 0.9;
+    }
+    /* CSS:HERO-END */
+    
+    /* CSS:ABOUT-START */
+    .section-about {
+      background-color: #ffffff;
+    }
+    
+    .about-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .about-image {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(74, 112, 169, 0.2);
+      /*下面自己加的*/
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:center;
+      padding:20px;
+    }
+    /*下面自己加的<<<*/
+    .items{
+      width: 100%;
+      max-width:600px;
+      height:auto;
+      overflow:hidden;
+      border-radius:8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    
+    .items img{
+      width:100%;
+      height:auto;
+      display:block;
+      transition:transform 0.3s ease-in-out;
+    }
+    @media (min-width: 768px) {
+      .items {
+          /* 在大螢幕上使用 flex 彈性寬度，讓三張圖平均分配 */
+          width: calc((100% - 40px) / 3); 
+          /* max-width: none; */ /* 移除最大寬度限制 */}
+    }
+    
+    .items:hover img{
+      transform:scale(1.3);
+    }
+    .caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+    /* 初始狀態：完全透明 (隱藏) 且高度為 0 */
+    max-height: 0; 
+    opacity: 0;
+    visibility: hidden;
+    
+    /* 讓文字的出現與隱藏有動畫效果 */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    }
+     .items:hover .caption {
+    /* 懸停狀態：設置一個足夠大的高度，讓文字顯示出來 */
+    max-height: 200px; /* 根據文字長度調整，確保能完整顯示 */
+    opacity: 1; /* 變成不透明 (顯示) */
+    padding-top:40px;
+    visibility: visible;
+    
+    /* 懸停時，不需要延遲 visibility 屬性 */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0s;
+    }
+    /*上面自己加的>>>*/
+
+    .about-text {
+      color: #000000;
+      margin-bottom: 1rem;
+    }
+    /* CSS:ABOUT-END */
+    
+    /* CSS:SKILLS-START */
+    .section-skills {
+      background-color: #EFECE3;
+    }
+    
+    .skills-placeholder {
+      text-align: center;
+      color: #000000;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    /* CSS:SKILLS-END */
+    
+    /* CSS:PROJECTS-START */
+    .section-projects {
+      background-color: #ffffff;
+    }
+    
+    .projects-placeholder {
+      text-align: center;
+      color: #000000;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    /* CSS:PROJECTS-END */
+    
+    /* CSS:CONTACT-START */
+    .section-contact {
+      background-color: #EFECE3;
+    }
+    
+    .contact-placeholder {
+      text-align: center;
+      color: #000000;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .contact-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+    
+    .contact-item {
+      margin-bottom: 1rem;
+    }
+    
+    .contact-link {
+      color: #4A70A9;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-link:hover {
+      color: #8FABD4;
+    }
+    /* CSS:CONTACT-END */
+    
+    /* CSS:FOOTER-START */
+    .site-footer {
+      background-color: #4A70A9;
+      padding: 2rem 0;
+      margin-top: auto;
+      border-top: 2px solid #8FABD4;
+    }
+    
+    .footer-content {
+      text-align: center;
+      color: #EFECE3;
+      font-size: 0.9rem;
+    }
+    /* CSS:FOOTER-END */
+    
+    /* CSS:RWD-START */
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .nav-list {
+        gap: 2rem;
+      }
+      
+      .section {
+        padding: 5rem 0;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 2rem;
+      }
+    }
+    /* CSS:RWD-END */
+  </style>
+</head>
+<body class="page">
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#hero" class="site-logo">Fan HuiYi · 空中飛仔的轉職日記<img src="homeICON.png" alt="homeICON" class="home-icon"></a>
+      <ul class="nav-list">
+        <li><a href="#hero" class="nav-link">首頁</a></li>
+        <li><a href="#about" class="nav-link">關於我</a></li>
+        <li><a href="#skills" class="nav-link">技能</a></li>
+        <li><a href="#projects" class="nav-link">作品集</a></li>
+        <li><a href="#contact" class="nav-link">聯絡我</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SECTION:HERO-START -->
+    <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-heading" class="hero-title">0程式背景嘗試Vibe Coding全紀錄</h1>
+          <p class="hero-subtitle">Frontend Developer | UI/UX 新手上路</p>
+          <p class="hero-description">這裡是主視覺區的占位內容。未來這一區會放：一句話精煉的自我介紹、核心職稱與專業領域、以及行動呼籲按鈕（例如：瀏覽作品集、下載履歷）。</p>
+          <p class="hero-note">💡 之後會用 Section SDD 的 Prompt 產生正式文案與版面，再把整個 section 貼回來取代這一區。</p>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:HERO-END -->
+
+    <!-- SECTION:ABOUT-START -->
+    <section id="about" class="section section-about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
+        <div class="about-content">
+          <div class="about-image">
+              <div class="items">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="在筆電前撰寫程式碼的前端開發者工作環境" loading="lazy" >
+                    <div class="caption">這是第1張圖的補充說明，滑鼠移開後會自動隱藏。</div>
+              </div>      
+              <div class="items">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="在筆電前撰寫程式碼的前端開發者工作環境" loading="lazy" >
+                    <div class="caption">這是第2張圖的補充說明，滑鼠移開後會自動隱藏。</div>
+              </div>         
+              <div class="items">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="在筆電前撰寫程式碼的前端開發者工作環境" loading="lazy" >
+                    <div class="caption">這是第3張圖的補充說明，滑鼠移開後會自動隱藏。</div>
+              </div>  
+          </div>
+          <p class="about-text">這裡目前是 About 區的占位內容。未來這一區會介紹個人背景、學習歷程、工作經驗、專業理念等資訊。</p>
+          <p class="about-text">💡 之後會用另一個 Prompt 產生正式內容，請把新的 section 程式碼整段貼回來，取代這兩個註解之間的內容。</p> 
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:ABOUT-END -->
+
+    <!-- SECTION:SKILLS-START -->
+    <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading" class="section-title">專業技能（之後會用 Section SDD 替換）</h2>
+        <div class="skills-placeholder">
+          <p>這裡目前是 Skills 區的占位內容。未來這一區會展示技術技能清單、熟練度指標、學習中的新技術等。</p>
+          <p>💡 之後會用另一個 Prompt 產生正式內容，請把新的 section 程式碼整段貼回來，取代這兩個註解之間的內容。</p>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:SKILLS-END -->
+
+    <!-- SECTION:PROJECTS-START -->
+    <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading" class="section-title">作品集（之後會用 Section SDD 替換）</h2>
+        <div class="projects-placeholder">
+          <p>這裡目前是 Projects 區的占位內容。未來這一區會展示精選專案、每個專案的截圖、技術說明、以及專案連結。</p>
+          <p>💡 之後會用另一個 Prompt 產生正式內容，請把新的 section 程式碼整段貼回來，取代這兩個註解之間的內容。</p>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:PROJECTS-END -->
+
+    <!-- SECTION:CONTACT-START -->
+    <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading" class="section-title">聯絡我（之後會用 Section SDD 替換）</h2>
+        <div class="contact-placeholder">
+          <p>這裡目前是 Contact 區的占位內容。未來這一區會提供各種聯絡方式與社群媒體連結。</p>
+          <ul class="contact-list">
+            <li class="contact-item">📧 Email: <a href="mailto:fanhuiyi426@gmail.com" class="contact-link">fanhuiyi426@gmail.com</a></li>
+            <li class="contact-item">📱 電話: <a href="tel:+886900000000" class="contact-link">+886-900-000-000</a></li>
+            <li class="contact-item">💼 LinkedIn: <a href="https://www.linkedin.com/in/hui-yi-fan-50bb74324/" class="contact-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/FAN HUI YI</a></li>
+            <li class="contact-item">🐙 GitHub: <a href="https://github.com/bessbessfan-art" class="contact-link" target="_blank" rel="noopener noreferrer">github.com/bessbessfan</a></li>
+          </ul>
+          <p style="margin-top: 2rem;">💡 之後會用另一個 Prompt 產生正式內容，請把新的 section 程式碼整段貼回來，取代這兩個註解之間的內容。</p>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:CONTACT-END -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-content">&copy; 2025 Fan HuiYi · ex-Cabin Crew. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
